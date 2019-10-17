@@ -1,5 +1,14 @@
 # Project 2
 
+### Website Design
+
+![alt](https://i.imgur.com/2rY5DFF.jpg)
+![alt](https://i.imgur.com/LilQb9i.jpg)
+![alt](https://i.imgur.com/EbJqc2u.jpg)
+
+
+
+
 ### Members
 
 * Abhishu Mukherjee - Front End
