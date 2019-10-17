@@ -1,22 +1,13 @@
-# Project 2: Requirements
+# Project 2
 
-* **The requirements for Project #2 are as follows:**
+### Members
 
-* Must use a Node and Express Web Server
+* Abhishu Mukherjee - Front End
+* Daniel Chiu - Back End
+* Angelica Zamer - Front End
+* Race Briggs - Back End
 
-* Must be backed by a MySQL Database with a Sequelize ORM  
+### Animal Watching App (Work In Progress)
 
-* Must have both GET and POST routes for retrieving and adding new data
-
-* Must be deployed using Heroku (with Data)
-
-* Must utilize at least one new library, package, or technology that we haven’t discussed
-
-* Must have a polished frontend / UI 
-
-* Must have folder structure that meets MVC Paradigm
-
-* Must meet good quality coding standards (indentation, scoping, naming)
-
-* Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../../01-Class-Content/10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
+Post pictures, captions, and comment on other posts about animals you see out in the world.
 
