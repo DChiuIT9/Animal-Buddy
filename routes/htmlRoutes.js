@@ -6,16 +6,16 @@ module.exports = function(app) {
     db.Post.findAll({}).then(function(post) {
       res.render("index", {
         msg: "Welcome!",
-        examples: post
+        posts: post
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  app.get("/posts/:id", function(req, res) {
     db.Post.findOne({ where: { id: req.params.id } }).then(function(post) {
       res.render("post", {
-        example: post
+        post: post
       });
     });
   });
