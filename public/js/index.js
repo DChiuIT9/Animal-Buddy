@@ -128,6 +128,6 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$animalList.on("click", ".delete", handleDeleteBtnClick);
+// $animalList.on("click", ".delete", handleDeleteBtnClick);
 
 refreshPosts();
