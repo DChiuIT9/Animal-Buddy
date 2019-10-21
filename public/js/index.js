@@ -1,6 +1,4 @@
 // Get references to page elements
-var $postText = $("#example-text");
-var $postDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -65,8 +63,11 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var post = {
-    text: $postText.val().trim(),
-    description: $postDescription.val().trim()
+    animal_name: $("#inputAnimal").val().trim(),
+    location: $("#inputLocation").val().trim(),
+    img: $("#imageUrl").val().trim(),
+    caption: $("#caption").val().trim(),
+    category: $("#category").val().trim(),
   };
 
   if (!(post.text && post.description)) {
@@ -77,9 +78,12 @@ var handleFormSubmit = function(event) {
   API.savePost(post).then(function() {
     refreshPosts();
   });
-
-  $postText.val("");
-  $postDescription.val("");
+  $("#inputAnimal").val("");
+  $("#inputLocation").val("");
+ $("#imageUrl").val("");
+  $("#caption").val("");
+$("#category").val("");
+  
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
