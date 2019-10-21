@@ -4,10 +4,19 @@ var path = require("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Post.findAll({}).then(function(post) {
-      res.sendFile(path.join(__dirname, "../public/html/home.html"));
-      res.json(post);
-    });
+    // db.Post.findAll({}).then(function(post) {
+
+    //   res.json(post);
+    // });
+    res.sendFile(path.join(__dirname, "../public/html/home.html"));
+  });
+
+  app.get("/share", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/html/form.html"));
+  });
+
+  app.get("/view", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/html/viewPage.html"));
   });
 
   // Load example page and pass in an example by id
