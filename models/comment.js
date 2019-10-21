@@ -1,6 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var Comment = sequelize.define("Comment", {
-    comment: DataTypes.STRING
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    }
   });
   Comment.associate = function(models) {
     Comment.belongsTo(models.User, {

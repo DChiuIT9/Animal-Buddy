@@ -29,12 +29,6 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/animals", function(req, res) {
-    db.Post.findAll({}).then(function(result) {
-      res.json(result);
-    });
-  });
-
   app.get("api/users/:id", function(req, res) {
     db.Post.findOne({ where: { id: req.params.id } }).then(function(result) {
       res.json(result);
