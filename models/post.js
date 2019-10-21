@@ -6,12 +6,12 @@ module.exports = function(sequelize, DataTypes) {
     caption: DataTypes.STRING,
     category: DataTypes.STRING
   });
-  Post.associate = function(models) {
-    Post.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: true
-      }
-    });
-  };
+  // Post.associate = function(models) {
+  //   Post.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: true
+  //     }
+  //   });
+  // };
   return Post;
 };

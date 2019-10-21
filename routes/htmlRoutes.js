@@ -1,13 +1,12 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Post.findAll({}).then(function(post) {
-      res.render("index", {
-        msg: "Welcome!",
-        posts: post
-      });
+      res.sendFile(path.join(__dirname, "../public/html/home.html"));
+      res.json(post);
     });
   });
 
