@@ -10,7 +10,15 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/posts", function(req, res) {
-    db.Post.create(req.body).then(function(result) {
+    db.Post.create({
+      animal_name: req.body.animal_name,
+      location: req.body.location,
+      img: req.body.img,
+      caption: req.body.caption,
+      time_stamp: req.body.time_stamp,
+      category: req.body.category,
+      UserId: req.body.UserId
+    }).then(function(result) {
       res.json(result);
     });
   });
@@ -23,7 +31,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/users", function(req, res) {
-    db.User.findAll().then(function(result) {
+    db.User.findAll({}).then(function(result) {
       res.json(result);
     });
   });
