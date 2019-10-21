@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     location: DataTypes.STRING,
     img: DataTypes.STRING,
     caption: DataTypes.STRING,
-    time_stamp: DataTypes.TIME,
     category: DataTypes.STRING
   });
   Post.associate = function(models) {
