@@ -15,7 +15,6 @@ module.exports = function(app) {
       location: req.body.location,
       img: req.body.img,
       caption: req.body.caption,
-      time_stamp: req.body.time_stamp,
       category: req.body.category,
       UserId: req.body.UserId
     }).then(function(result) {
