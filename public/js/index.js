@@ -1,6 +1,5 @@
 // Get references to page elements
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -10,19 +9,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/posts",
+      url: "/api/posts",
       data: JSON.stringify(post)
     });
   },
   getPosts: function() {
     return $.ajax({
-      url: "api/posts",
+      url: "/api/posts",
       type: "GET"
     });
   },
   deletePost: function(id) {
     return $.ajax({
-      url: "api/posts/" + id,
+      url: "/api/posts/" + id,
       type: "DELETE"
     });
   }
@@ -32,16 +31,30 @@ var API = {
 var refreshPosts = function() {
   API.getPosts().then(function(data) {
     var $posts = data.map(function(post) {
+      console.log(post);
       var $a = $("<a>")
-        .text(example.text)
+        .text(post.animal_name)
         .attr("href", "/posts/" + post.id);
+
+      var $location = $("<h4>")
+        .text(post.location)
+        .attr("class", "animal-location");
+
+      var $image = $("<img>").attr("href", post.img);
+
+      var $caption = $("<p>")
+        .text(post.caption)
+        .attr("class", "animal-caption");
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
           "data-id": post.id
         })
-        .append($a);
+        .append($a)
+        .append($location)
+        .append($image)
+        .append($caption);
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
@@ -49,11 +62,15 @@ var refreshPosts = function() {
 
       $li.append($button);
 
+      console.log($li);
+
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($posts);
+    console.log($posts);
+
+    $("#animal-list").empty();
+    $("#animal-list").append($posts);
   });
 };
 
@@ -63,27 +80,38 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var post = {
-    animal_name: $("#inputAnimal").val().trim(),
-    location: $("#inputLocation").val().trim(),
-    img: $("#imageUrl").val().trim(),
-    caption: $("#caption").val().trim(),
-    category: $("#category").val().trim(),
+    animal_name: $("#inputAnimal")
+      .val()
+      .trim(),
+    location: $("#inputLocation")
+      .val()
+      .trim(),
+    img: $("#imageUrl")
+      .val()
+      .trim(),
+    caption: $("#caption")
+      .val()
+      .trim(),
+    category: $("#category")
+      .val()
+      .trim()
   };
 
-  if (!(post.text && post.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  console.log(post);
+
+  // if (!(post.text && post.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
   API.savePost(post).then(function() {
     refreshPosts();
   });
   $("#inputAnimal").val("");
   $("#inputLocation").val("");
- $("#imageUrl").val("");
+  $("#imageUrl").val("");
   $("#caption").val("");
-$("#category").val("");
-  
+  $("#category").val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -100,4 +128,6 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$animalList.on("click", ".delete", handleDeleteBtnClick);
+
+refreshPosts();

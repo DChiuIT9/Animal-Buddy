@@ -11,11 +11,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/home.html"));
   });
 
-  app.get("/share", function(req, res){
+  app.get("/share", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/form.html"));
   });
 
-  app.get("/view", function(req, res){
+  app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/viewPage.html"));
   });
 
