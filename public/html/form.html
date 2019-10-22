@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+​
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
@@ -8,8 +8,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <title>Submit Animal</title>
+  <script src="../js/index.js"></script>
 </head>
-
+​
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <a class="navbar-brand" href="/">Animal Buddy!</a>
@@ -30,13 +31,15 @@
   </nav>
   <br>
   <div class="container">
-
-    <form class="submit-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputAnimal">What did you see?</label>
-          <input type="text" class="formm-control" id="inputAnimal" placeholder="Animal">
-        </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputAnimal">What did you see?</label>
+              <input type="text" class="form-control" id="inputAnimal" placeholder="Longhorn">
+            </div>
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label for="inputLocation">Where did you see it?</label>
@@ -73,7 +76,6 @@
       </div>
     </div>
   </div>
-  <script src="../js/index.js"></script>
 </body>
-
+​
 </html>
