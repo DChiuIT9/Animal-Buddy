@@ -21,7 +21,64 @@ var API = {
       url: "/api/posts/" + id,
       type: "DELETE"
     });
+  },
+  getByCategory: function(category) {
+    console.log(category);
+    $.ajax({
+      url: "/api/posts/category/",
+      type: "GET"
+    }).then(function(response){
+      return response;
+    });
   }
+};
+
+var refreshCategory = function(category) {
+  console.log(category);
+  return API.getByCategory(category);
+  API.getByCategory(category).then(function(data) {
+    var $posts = data.map(function(post) {
+      console.log(post);
+      var $a = $("<a>")
+        .text(post.animal_name)
+        .attr("href", "/posts/" + post.id);
+
+      var $location = $("<h4>")
+        .text(post.location)
+        .attr("class", "animal-location");
+
+      var $image = $("<img>").attr("href", post.img);
+
+      var $caption = $("<p>")
+        .text(post.caption)
+        .attr("class", "animal-caption");
+
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": post.id
+        })
+        .append($a)
+        .append($location)
+        .append($image)
+        .append($caption);
+
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
+
+      $li.append($button);
+
+      console.log($li);
+
+      return $li;
+    });
+
+    console.log($posts);
+
+    $("#animal-list").empty();
+    $("#animal-list").append($posts);
+  });
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
@@ -129,7 +186,11 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-// $("#submit").click(handleFormSubmit);
 $(".delete").on("click", handleDeleteBtnClick);
+$(".category-sort").on("click", function() {
+  console.log($(this).text());
+  newVal = $(this).text();
+  refreshCategory(newVal);
+});
 
 refreshPosts();
