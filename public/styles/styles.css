@@ -1,4 +1,18 @@
-.list-group-item {
-  line-height: 2.5;
+body {
+  background-image: url("https://images.unsplash.com/photo-1462803966231-b88ec09ff42a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
+
+.container {
+  color: antiquewhite;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: inherit;
+  text-shadow: 3px 3px 3px black;
+}
+
+.btn {
+  text-shadow: none;
+}
+
 

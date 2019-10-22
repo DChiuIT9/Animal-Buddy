@@ -1,6 +1,3 @@
-// Get references to page elements
-var $submitBtn = $("#submit");
-
 // The API object contains methods for each kind of request we'll make
 var API = {
   savePost: function(post) {
@@ -24,7 +21,63 @@ var API = {
       url: "/api/posts/" + id,
       type: "DELETE"
     });
+  },
+  getByCategory: function(category) {
+    console.log(category);
+    $.ajax({
+      url: "/api/posts/category/",
+      type: "GET"
+    }).then(function(response) {
+      return response;
+    });
   }
+};
+
+var refreshCategory = function(category) {
+  console.log(category);
+  API.getByCategory(category).then(function(data) {
+    var $posts = data.map(function(post) {
+      console.log(post);
+      var $a = $("<a>")
+        .text(post.animal_name)
+        .attr("href", "/posts/" + post.id);
+
+      var $location = $("<h4>")
+        .text(post.location)
+        .attr("class", "animal-location");
+
+      var $image = $("<img>").attr("href", post.img);
+
+      var $caption = $("<p>")
+        .text(post.caption)
+        .attr("class", "animal-caption");
+
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": post.id
+        })
+        .append($a)
+        .append($location)
+        .append($image)
+        .append($caption);
+
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
+
+      $li.append($button);
+
+      console.log($li);
+
+      return $li;
+    });
+
+    console.log($posts);
+
+    $("#animal-list").empty();
+    $("#animal-list").append($posts);
+  });
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
@@ -76,8 +129,12 @@ var refreshPosts = function() {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// var handleFormSubmit = function(event) {
+
+$("#submit").on("click", function(event) {
   event.preventDefault();
+
+  console.log("submitting");
 
   var post = {
     animal_name: $("#inputAnimal")
@@ -105,14 +162,15 @@ var handleFormSubmit = function(event) {
   // }
 
   API.savePost(post).then(function() {
-    refreshPosts();
+    // refreshPosts();
+    console.log("posted");
   });
   $("#inputAnimal").val("");
   $("#inputLocation").val("");
   $("#imageUrl").val("");
   $("#caption").val("");
   $("#category").val("");
-};
+});
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
@@ -127,7 +185,11 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$animalList.on("click", ".delete", handleDeleteBtnClick);
+$(".delete").on("click", handleDeleteBtnClick);
+$(".category-sort").on("click", function() {
+  console.log($(this).text());
+  newVal = $(this).text();
+  refreshCategory(newVal);
+});
 
 refreshPosts();
