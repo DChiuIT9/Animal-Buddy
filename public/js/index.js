@@ -45,7 +45,7 @@ var refreshCategory = function(category) {
         .text(post.location)
         .attr("class", "animal-location");
 
-      var $image = $("<img>").attr("href", post.img);
+      var $image = $("<img class='animal-image'>").attr("src", post.img);
 
       var $caption = $("<p>")
         .text(post.caption)
@@ -61,12 +61,6 @@ var refreshCategory = function(category) {
         .append($image)
         .append($caption);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
       console.log($li);
 
       return $li;
@@ -75,7 +69,7 @@ var refreshCategory = function(category) {
     console.log($posts);
 
     $("#animal-list").empty();
-    $("#animal-list").append($posts);
+    $("#animal-list").prepend($posts);
   });
 };
 
