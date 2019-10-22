@@ -24,11 +24,9 @@ var API = {
   },
   getByCategory: function(category) {
     console.log(category);
-    $.ajax({
-      url: "/api/posts/category/",
+    return $.ajax({
+      url: "/api/posts/category/" + category,
       type: "GET"
-    }).then(function(response) {
-      return response;
     });
   }
 };
@@ -36,6 +34,7 @@ var API = {
 var refreshCategory = function(category) {
   console.log(category);
   API.getByCategory(category).then(function(data) {
+    console.log(data);
     var $posts = data.map(function(post) {
       console.log(post);
       var $a = $("<a>")
@@ -186,9 +185,9 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $(".delete").on("click", handleDeleteBtnClick);
-$(".category-sort").on("click", function() {
-  console.log($(this).text());
-  newVal = $(this).text();
+$(".category-select").on("click", function() {
+  console.log($(this).val());
+  newVal = $(this).val();
   refreshCategory(newVal);
 });
 
