@@ -5,6 +5,7 @@ body {
   background-attachment: fixed;
   background-position: center;
 }
+
 .container {
   color: antiquewhite;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -15,4 +16,5 @@ body {
 .btn {
   text-shadow: none;
 }
+
 
