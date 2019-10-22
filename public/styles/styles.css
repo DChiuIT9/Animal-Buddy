@@ -1,7 +1,9 @@
 body {
   background-image: url("https://images.unsplash.com/photo-1462803966231-b88ec09ff42a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 .container {
   color: antiquewhite;
