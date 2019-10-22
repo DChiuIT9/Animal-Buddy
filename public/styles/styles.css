@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+
 .container {
   color: antiquewhite;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -13,4 +14,5 @@ body {
 .btn {
   text-shadow: none;
 }
+
 
