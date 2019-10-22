@@ -27,7 +27,7 @@ var API = {
     $.ajax({
       url: "/api/posts/category/",
       type: "GET"
-    }).then(function(response){
+    }).then(function(response) {
       return response;
     });
   }
@@ -35,7 +35,6 @@ var API = {
 
 var refreshCategory = function(category) {
   console.log(category);
-  return API.getByCategory(category);
   API.getByCategory(category).then(function(data) {
     var $posts = data.map(function(post) {
       console.log(post);
