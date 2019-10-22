@@ -1,6 +1,3 @@
-// Get references to page elements
-var $submitBtn = $("#submit");
-
 // The API object contains methods for each kind of request we'll make
 var API = {
   savePost: function(post) {
@@ -76,8 +73,12 @@ var refreshPosts = function() {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// var handleFormSubmit = function(event) {
+
+$("#submit").on("click", function(event) {
   event.preventDefault();
+
+  console.log("submitting");
 
   var post = {
     animal_name: $("#inputAnimal")
@@ -105,14 +106,15 @@ var handleFormSubmit = function(event) {
   // }
 
   API.savePost(post).then(function() {
-    refreshPosts();
+    // refreshPosts();
+    console.log("posted");
   });
   $("#inputAnimal").val("");
   $("#inputLocation").val("");
   $("#imageUrl").val("");
   $("#caption").val("");
   $("#category").val("");
-};
+});
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
@@ -127,7 +129,7 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$animalList.on("click", ".delete", handleDeleteBtnClick);
+// $("#submit").click(handleFormSubmit);
+$(".delete").on("click", handleDeleteBtnClick);
 
 refreshPosts();
