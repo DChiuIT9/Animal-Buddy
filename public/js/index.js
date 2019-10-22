@@ -151,12 +151,14 @@ $("#submit").on("click", function(event) {
   API.savePost(post).then(function() {
     // refreshPosts();
     console.log("posted");
+    $("#inputAnimal").val("");
+    $("#inputLocation").val("");
+    $("#imageUrl").val("");
+    $("#caption").val("");
+    $("#category").val("");
+    window.location.href = "/view";
   });
-  $("#inputAnimal").val("");
-  $("#inputLocation").val("");
-  $("#imageUrl").val("");
-  $("#caption").val("");
-  $("#category").val("");
+  
 });
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
