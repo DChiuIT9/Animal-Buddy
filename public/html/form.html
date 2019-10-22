@@ -4,75 +4,74 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <title>Submit Animal</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="/">Animal Buddy!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-<br>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="/">Animal Buddy!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/share">Share</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/view">Discover</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
   <div class="container">
+
     <form class="submit-form">
       <div class="form-row">
         <div class="form-group">
           <label for="inputAnimal">What did you see?</label>
           <input type="text" class="formm-control" id="inputAnimal" placeholder="Animal">
         </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputLocation">Where did you see it?</label>
+              <input type="text" class="form-control" id="inputLocation" placeholder="1234 Main St">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputUser">Submit Image</label>
+              <input type="text" class="form-control" id="imageUrl" placeholder="Image URL">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputUser">Description</label>
+              <input type="text" class="form-control" id="caption" placeholder="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inputState">Category</label>
+              <select id="category" class="form-control">
+                <option>Animal</option>
+                <option>Insect</option>
+                <option>Fish</option>
+                <option>Bird</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn btn-success" id="submit">Submit</button>
+          </div>
+        </form>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputLocation">Where did you see it?</label>
-          <input type="text" class="form-control" id="inputLocation" placeholder="1234 Main St">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputUser">Submit Image</label>
-          <input type="text" class="form-control" id="imageUrl" placeholder="Image URL">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputUser">Description</label>
-          <input type="text" class="form-control" id="caption" placeholder="">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputState">Category</label>
-          <select id="category" class="form-control">
-            <option selected>...</option>
-            <option>Animal</option>
-            <option>Insect</option>
-            <option>Fish</option>
-            <option>Bird</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-          <button type="submit" class="btn btn-success" id="submit">Submit</button>
-      </div>
-    </form>
+    </div>
   </div>
   <script src="../js/index.js"></script>
 </body>
