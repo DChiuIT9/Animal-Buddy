@@ -31,3 +31,9 @@ body {
   max-height: 200px;
   max-width: 200px;
 }
+
+
+.popup-image {
+  max-height: 75px;
+  max-width: 75px;
+}
