@@ -17,6 +17,7 @@ function storePosition(position) {
 }
 
 function generateMap(latitude, longitude) {
+  var latling = L.latLng(latitude, longitude);
   var map = L.map("map", {
     center: [latitude, longitude],
     zoom: 13
@@ -48,10 +49,10 @@ function getPopups(map) {
   getAllEntries().then(function(data){
     data.forEach(function(post){
       var latlng = L.latLng(post.latitude, post.longitude);
-      L.popup()
+      var layer = L.popup()
         .setLatLng(latlng)
         .setContent(`<h6>${post.animal_name}</h6><img src="${post.img}" class="popup-image">`)
-        .openOn(map)
+      layer.addTo(map);
     })
   })
 }
