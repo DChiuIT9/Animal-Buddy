@@ -28,6 +28,13 @@ var API = {
       url: "/api/posts/category/" + category,
       type: "GET"
     });
+  },
+  getById: function(id) {
+    console.log(id);
+    return $.ajax({
+      url: "/api/posts/id/" + id,
+      type: "GET"
+    });
   }
 };
 
@@ -45,7 +52,7 @@ var refreshCategory = function(category) {
         .text(post.location)
         .attr("class", "animal-location");
 
-      var $image = $("<img class='animal-image'>").attr("src", post.img);
+      var $image = $('<img class="animal-image">').attr("src", post.img);
 
       var $caption = $("<p>")
         .text(post.caption)
