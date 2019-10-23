@@ -93,7 +93,7 @@ var refreshPosts = function() {
         .text(post.location)
         .attr("class", "animal-location");
 
-      var $image = $("<img class='animal-image' height='200' width='200'>").attr("src", post.img);
+      var $image = $("<img class='animal-image'>").attr("src", post.img);
 
       var $caption = $("<p>")
         .text(post.caption)

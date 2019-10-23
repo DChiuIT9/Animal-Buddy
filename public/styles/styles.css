@@ -23,3 +23,8 @@ body {
   width: 100%;
   height: 100%;   
 } */
+
+.animal-image {
+  max-height: 200px;
+  max-width: 200px;
+}
