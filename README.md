@@ -2,7 +2,7 @@
 
 ### Our Site
 
-https://group9-project2.herokuapp.com/
+https://animal-buddy.herokuapp.com/
 
 ### Slides
 
