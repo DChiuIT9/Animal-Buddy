@@ -17,6 +17,11 @@ body {
   text-shadow: none;
 }
 
+#map {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 5%;
+}
 
 /*CSS for carousel*/
 /* .carousel-indicators {

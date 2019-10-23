@@ -16,7 +16,8 @@ module.exports = function(app) {
       img: req.body.img,
       caption: req.body.caption,
       category: req.body.category,
-      UserId: req.body.UserId
+      latitude: req.body.latitude,
+      longitude: req.body.longitude
     }).then(function(result) {
       res.json(result);
     });
