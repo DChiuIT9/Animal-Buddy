@@ -24,6 +24,12 @@ body {
   max-width: 200px;
 }
 
+#map {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 5%;
+}
+
 /*media queries*/
 @media screen and (max-width: 640px){
 .navbar-brand {
@@ -56,7 +62,7 @@ body {
   form{
     display: inline-block;
   }
-
+}
 @media screen and (max-width: 980px){
 
 #map {
