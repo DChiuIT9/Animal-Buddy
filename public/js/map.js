@@ -17,7 +17,6 @@ function storePosition(position) {
 }
 
 function generateMap(latitude, longitude) {
-  var latling = L.latLng(latitude, longitude);
   var map = L.map("map", {
     center: [latitude, longitude],
     zoom: 13
@@ -58,11 +57,3 @@ function getPopups(map) {
 }
 
 getLocation();
-
-console.log(latitude);
-console.log(longitude);
-
-module.exports = {
-  latitude: latitude,
-  longitude: longitude
-};
