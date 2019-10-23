@@ -19,6 +19,11 @@ body {
   background: rgb(8, 75, 8);
 }
 
+.animal-image {
+  max-height: 200px;
+  max-width: 200px;
+}
+
 /*media queries*/
 @media screen and (max-width: 640px){
 .navbar-brand {
