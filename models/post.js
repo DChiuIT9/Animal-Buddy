@@ -4,7 +4,9 @@ module.exports = function(sequelize, DataTypes) {
     location: DataTypes.STRING,
     img: DataTypes.STRING,
     caption: DataTypes.STRING,
-    category: DataTypes.STRING
+    category: DataTypes.STRING,
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT
   });
   // Post.associate = function(models) {
   //   Post.belongsTo(models.User, {

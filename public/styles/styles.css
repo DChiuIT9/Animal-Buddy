@@ -17,6 +17,12 @@ body {
   text-shadow: none;
 }
 
+#map {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 5%;
+}
+
 #myCarousel {
   margin-top: 30px;
 }
