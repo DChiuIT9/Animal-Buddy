@@ -7,24 +7,57 @@ body {
 }
 
 .container {
-  color: rgb(23, 102, 54);
+  color:white;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: inherit;
+  font-size: 20px;
   /* text-shadow: 2px 2px 2px rgb(125, 194, 156); */
 }
 
 .btn {
   text-shadow: none;
+  background: rgb(8, 75, 8);
 }
+
+/*media queries*/
+@media screen and (max-width: 640px){
+.navbar-brand {
+  margin-left: 5%;
+}
+
+.nav-link {
+margin-left: 5%;
+}
+
+body {
+text-align: center; 
+}
+
+form{
+  display: inline-block;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 10%;
+  }
+
+
+body {
+  text-align: center; 
+  }
+  
+  form{
+    display: inline-block;
+  }
+
+@media screen and (max-width: 980px){
 
 #map {
   height: 500px;
   width: 500px;
   margin-bottom: 5%;
-}
-
-#myCarousel {
-  margin-top: 30px;
 }
 
 .animal-image {
@@ -36,4 +69,5 @@ body {
 .popup-image {
   max-height: 75px;
   max-width: 75px;
+}
 }
