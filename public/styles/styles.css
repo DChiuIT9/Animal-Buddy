@@ -54,4 +54,20 @@ body {
 
 @media screen and (max-width: 980px){
 
+#map {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 5%;
+}
+
+.animal-image {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+
+.popup-image {
+  max-height: 75px;
+  max-width: 75px;
+}
 }

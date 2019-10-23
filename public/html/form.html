@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <title>Submit Animal</title>
-  <script src="../js/index.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -39,19 +39,19 @@
           <div class="form-row">
             <div class="form-group">
               <label for="inputAnimal">What did you see?</label>
-              <input type="text" class="form-control" id="inputAnimal" placeholder="Longhorn">
+              <input type="text" class="form-control" id="inputAnimal" placeholder="Longhorn" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="inputLocation">Where did you see it?</label>
-              <input type="text" class="form-control" id="inputLocation" placeholder="1234 Main St">
+              <input type="text" class="form-control" id="inputLocation" placeholder="1234 Main St" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="inputUser">Submit Image</label>
-              <input type="text" class="form-control" id="imageUrl" placeholder="Image URL">
+              <input type="text" class="form-control" id="imageUrl" placeholder="Image URL" required>
             </div>
           </div>
           <div class="form-row">
@@ -60,7 +60,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="inputUser">Description</label>
-              <input type="text" class="form-control" id="caption" placeholder="">
+              <input type="text" class="form-control" id="caption" placeholder="" required>
             </div>
           </div>
           <div class="form-row">
@@ -81,6 +81,6 @@
       </div>
     </div>
   </div>
-
+  <script src="../js/index.js"></script>
 </body>
 </html>

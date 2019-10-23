@@ -38,6 +38,23 @@ var API = {
   }
 };
 
+var latitude;
+var longitude;
+
+var getLocation = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(storePosition);
+  } else {
+    throw new Error("Geolocation required.");
+  }
+};
+
+function storePosition(position) {
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
+  console.log(latitude, longitude);
+}
+
 var refreshCategory = function(category) {
   console.log(category);
   API.getByCategory(category).then(function(data) {
@@ -52,7 +69,7 @@ var refreshCategory = function(category) {
         .text(post.location)
         .attr("class", "animal-location");
 
-      var $image = $('<img class="animal-image">').attr("src", post.img);
+      var $image = $("<img>").attr({ src: post.img, class: "animal-image" });
 
       var $caption = $("<p>")
         .text(post.caption)
@@ -93,7 +110,7 @@ var refreshPosts = function() {
         .text(post.location)
         .attr("class", "animal-location");
 
-      var $image = $("<img class='animal-image' height='200' width='200'>").attr("src", post.img);
+      var $image = $("<img class='animal-image'>").attr("src", post.img);
 
       var $caption = $("<p>")
         .text(post.caption)
@@ -145,7 +162,9 @@ $("#submit").on("click", function(event) {
       .trim(),
     category: $("#category")
       .val()
-      .trim()
+      .trim(),
+    latitude: latitude,
+    longitude: longitude
   };
 
   console.log(post);
@@ -165,7 +184,6 @@ $("#submit").on("click", function(event) {
     $("#category").val("");
     window.location.href = "/view";
   });
-  
 });
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -188,4 +206,5 @@ $(".category-select").on("click", function() {
   refreshCategory(newVal);
 });
 
+getLocation();
 refreshPosts();
