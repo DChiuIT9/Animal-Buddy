@@ -4,6 +4,10 @@
 
 https://group9-project2.herokuapp.com/
 
+### Slides
+
+https://docs.google.com/presentation/d/1rK005zTCNhAM5N2lK-dR5tAIzIVA2qKRj7l4fCIdCoA/edit#slide=id.p8
+
 ### Project Description
 
 Animal Buddy is an interactive database of animal(birds/insects/fish/animals) sightings. Users can upload their own pictures and descriptions of whatever animal they've seen. In addition, users can browse through other entries. The entries will be divided into specific categories based on the type of animal that was sighted. For each entry, users will be also able to add comments to other entries.
